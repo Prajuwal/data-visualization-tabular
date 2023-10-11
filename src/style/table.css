@@ -1,0 +1,15 @@
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+.data-table {
+  border-collapse: collapse;
+}
+
+.cell {
+  border: 1px solid #000;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+}
