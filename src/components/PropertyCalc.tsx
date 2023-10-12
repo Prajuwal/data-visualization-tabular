@@ -16,7 +16,7 @@ const PropertyCalc = () => {
   });
 
   
-//
+// class wise data for Gamma and Flavonoids is extracted
 
   const allGamma: number[][] = [];
   const allFlavonoids: number[][] = [];
@@ -41,9 +41,7 @@ const PropertyCalc = () => {
     }
   }
 
-    console.log(allFlavonoids);
-
-  console.log(allGamma);
+   
 
   return <Calculate allGamma={allGamma} allFlavonoids={allFlavonoids} />;
 };
