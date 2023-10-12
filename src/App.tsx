@@ -1,4 +1,3 @@
-
 import PropertyCalc from "./components/PropertyCalc";
 
 function App() {

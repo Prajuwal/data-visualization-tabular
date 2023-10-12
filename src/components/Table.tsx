@@ -1,3 +1,5 @@
+//displays in tabular form the calculated values for Gamma and Flavonoids
+
 import React from "react";
 import "../style/table.css"; 
 
