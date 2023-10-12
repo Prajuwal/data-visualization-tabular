@@ -1,5 +1,5 @@
-// calculates mean, median and mode, for every value it receives as props, returns one object for each value, which contains 
-// class wise mean, median and mode 
+// calculates mean, median and mode, for every value it receives as props, returns one object for each value, which contains
+// class wise mean, median and mode
 
 import React from "react";
 import Table from "./Table";
@@ -8,14 +8,12 @@ interface CalculateProps {
   allFlavonoids: Array<Array<number>>;
 }
 
-
-
 const Calculate: React.FC<CalculateProps> = ({ allGamma, allFlavonoids }) => {
   //this function takes an array, array of each class, and returns the mean rounded to 3 decimal places
   const calculateMean = (data: Array<number>): string => {
     const sum = data.reduce((acc, value) => acc + value, 0);
-      const mean = sum / data.length;
-   
+    const mean = sum / data.length;
+
     return mean.toFixed(3);
   };
 
@@ -51,7 +49,7 @@ const Calculate: React.FC<CalculateProps> = ({ allGamma, allFlavonoids }) => {
         maxCount = count;
       }
     }
-      
+
     //assumed single mode distribution
     return mode ? mode.toFixed(3) : "No mode";
   };
@@ -72,12 +70,11 @@ const Calculate: React.FC<CalculateProps> = ({ allGamma, allFlavonoids }) => {
   };
 
   // keeps the mode,median and mean values class-wise of Gamma
-    const allGammaWithStatistics = allGamma.map((classData, index) => ({
-      
-    classNumber: index + 1, 
+  const allGammaWithStatistics = allGamma.map((classData, index) => ({
+    classNumber: index + 1,
     ...calculateClassStatistics(classData),
   }));
-    
+
   // keeps the mode,median and mean values class-wise of Flavonoid
   const allFlavonoidsWithStatistics = allFlavonoids.map((classData, index) => ({
     classNumber: index + 1,

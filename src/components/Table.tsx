@@ -1,8 +1,7 @@
 //displays in tabular form the calculated values for Gamma and Flavonoids
 
 import React from "react";
-import "../style/table.css"; 
-
+import "../style/table.css";
 
 interface TableProps {
   data: Array<{
@@ -24,7 +23,7 @@ const Table: React.FC<TableProps> = ({ data, title }) => {
             <tr>
               <th>Measure</th>
               {data.map((row, index) => (
-                <th key={index}>Class  {row.classNumber}</th>
+                <th key={index}>Class {row.classNumber}</th>
               ))}
             </tr>
           </thead>

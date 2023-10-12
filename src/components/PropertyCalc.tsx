@@ -1,4 +1,4 @@
-//each value for which mode,mean and median is to be calculated, is converted in array of arrays format, and then sent as 
+//each value for which mode,mean and median is to be calculated, is converted in array of arrays format, and then sent as
 // props to calculate component
 
 import { data } from "../Wine-Data";
@@ -16,6 +16,7 @@ const PropertyCalc = () => {
   });
 
   // class wise data for Gamma and Flavonoids is extracted
+  // calculated Gamma on the fly, without making changes to dataset
 
   const allGamma: number[][] = [];
   const allFlavonoids: number[][] = [];

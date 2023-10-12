@@ -11,6 +11,7 @@ If you don't have Yarn installed, you can do so by running this command in your 
 In the project directory, you can run:
 
 ### `yarn install`
+
 ### `yarn start`
 
 Runs the app in the development mode.\
