@@ -2196,7 +2196,7 @@ export const data =[
     "Alcalinity of ash": 2.23,
     "Magnesium": 20,
     "Total phenols": 80,
-    "Flavanoids": ".98",
+    "Flavanoids": .98,
     "Nonflavanoid phenols": ".34",
     "Proanthocyanins": ".4",
     "Color intensity": ".68",

@@ -1,15 +1,19 @@
+/* Table.css */
 .table-container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
 }
 
-.data-table {
+.custom-table {
   border-collapse: collapse;
+  width: 50%; 
+  margin: 10px; 
 }
 
-.cell {
+.custom-table th,
+.custom-table td {
   border: 1px solid #000;
-  width: 100px;
-  height: 40px;
+  padding: 8px;
   text-align: center;
 }

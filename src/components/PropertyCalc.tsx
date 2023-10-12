@@ -1,25 +1,51 @@
-
 import { data } from "../Wine-Data";
+import Calculate from "./Calculate";
 const PropertyCalc = () => {
 
 
-const classArrays: { [key: string]: Array<{ [key: string]: any }> } = {};
 
+  // class wise segregated data, kept it in the classArraysObj object, each array inside classArraysObj object represent one class 
+  const classArraysObj: { [key: string]: Array<{ [key: string]: any }> } = {};
 
-data.forEach((item) => {
-  const alcoholClass: string = item["Alcohol"].toString(); 
-  if (!classArrays[alcoholClass]) {
-    classArrays[alcoholClass] = []; 
+  data.forEach((item) => {
+    const alcoholClass: string = item["Alcohol"].toString();
+    if (!classArraysObj[alcoholClass]) {
+      classArraysObj[alcoholClass] = [];
+    }
+    classArraysObj[alcoholClass].push(item);
+  });
+
+  
+//
+
+  const allGamma: number[][] = [];
+  const allFlavonoids: number[][] = [];
+
+  for (const key in classArraysObj) {
+    if (Array.isArray(classArraysObj[key])) {
+      const currentArray = classArraysObj[key];
+      const flavonoids = currentArray
+        .filter((item) => item.Flavanoids !== undefined)
+        .map((item) => item.Flavanoids);
+      allFlavonoids.push(flavonoids);
+
+      const results = currentArray
+        .filter(
+          (item) =>
+            item.Ash !== undefined &&
+            item.Hue !== undefined &&
+            item.Magnesium !== undefined
+        )
+        .map((item) => (item.Ash * item.Hue) / item.Magnesium);
+      allGamma.push(results);
+    }
   }
-  classArrays[alcoholClass].push(item); 
-});
 
+    console.log(allFlavonoids);
 
-console.log(classArrays);
+  console.log(allGamma);
 
-
-
-  return <div></div>;
+  return <Calculate allGamma={allGamma} allFlavonoids={allFlavonoids} />;
 };
 
-export default PropertyCalc
+export default PropertyCalc;

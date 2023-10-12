@@ -1,18 +1,10 @@
 
-import './App.css';
-import PropertyCalc from './components/PropertyCalc';
-import Table from './components/Table';
+import PropertyCalc from "./components/PropertyCalc";
 
 function App() {
-
- 
-
-  
   return (
     <div className="App">
-      <h1>hi world</h1>
       <PropertyCalc />
-      <Table />
     </div>
   );
 }
